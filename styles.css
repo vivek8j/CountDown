@@ -21,34 +21,35 @@ body {
     overflow: hidden;
 }
 
+/* Container */
 .container {
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 40px;
+    padding: 5vw;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 600px;
-    width: 90%; /* Make it responsive */
+    width: 90%; /* Make container width responsive */
     position: relative;
 }
 
 /* Typography */
 h1 {
-    font-size: 6vw; /* Relative font size */
+    font-size: 6vw; /* Make font size responsive to viewport */
     color: #e63946;
-    margin-bottom: 20px;
+    margin-bottom: 2vw;
     font-weight: bold;
 }
 
 h2 {
-    font-size: 8vw; /* Relative font size */
+    font-size: 8vw;
     color: #d62828;
-    margin-bottom: 30px;
+    margin-bottom: 3vw;
     font-style: italic;
 }
 
 .wedding-date {
-    font-size: 4vw; /* Responsive font size */
-    margin-top: 20px;
+    font-size: 4vw;
+    margin-top: 2vw;
     color: #d62828;
     font-weight: bold;
 }
@@ -57,7 +58,7 @@ h2 {
 .countdown-box {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 3vw;
 }
 
 .countdown {
@@ -69,9 +70,9 @@ h2 {
 .time-box {
     background-color: #ff4f79;
     border-radius: 10px;
-    padding: 15px;
-    margin: 5px;
-    font-size: 4vw; /* Relative font size */
+    padding: 4vw;
+    margin: 2vw;
+    font-size: 4vw;
     color: white;
     font-weight: bold;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -84,8 +85,8 @@ h2 {
 
 /* Heart animation */
 .heart-container {
-    margin-top: 30px;
-    font-size: 10vw; /* Larger heart on smaller screens */
+    margin-top: 3vw;
+    font-size: 10vw;
     animation: beat 1.5s infinite;
     color: #ff66b2;
 }
@@ -94,11 +95,9 @@ h2 {
     0% {
         transform: scale(1);
     }
-
     50% {
         transform: scale(1.2);
     }
-
     100% {
         transform: scale(1);
     }
@@ -106,7 +105,7 @@ h2 {
 
 /* Love quotes */
 .love-quotes {
-    margin-top: 20px;
+    margin-top: 2vw;
     font-size: 5vw;
     font-style: italic;
     color: #ff4f79;
@@ -114,12 +113,12 @@ h2 {
 }
 
 .love-quotes p {
-    margin: 10px 0;
+    margin: 1vw 0;
 }
 
 /* Celebration Message */
 #celebration {
-    margin-top: 40px;
+    margin-top: 4vw;
     font-size: 5vw;
     color: #ff4f79;
     font-weight: bold;
@@ -170,7 +169,7 @@ h2 {
 
 .falling-heart {
     position: absolute;
-    font-size: 5vw; /* Make hearts larger on mobile screens */
+    font-size: 5vw;
     animation: fall 4s linear infinite;
 }
 
@@ -199,8 +198,8 @@ h2 {
 
 .confetti {
     position: absolute;
-    width: 5vw;
-    height: 5vw;
+    width: 8vw;
+    height: 8vw;
     background-color: #ff66b2;
     animation: confettiFall 3s infinite;
     border-radius: 50%;
@@ -217,50 +216,66 @@ h2 {
 }
 
 /* Media Queries for responsiveness */
+
+/* For Tablet (screens up to 768px) */
 @media (max-width: 768px) {
-    /* Tablet */
     h1 {
         font-size: 8vw;
     }
+
     h2 {
         font-size: 10vw;
     }
+
     .wedding-date, .time-box {
         font-size: 5vw;
     }
+
     .heart-container {
         font-size: 12vw;
     }
+
     .love-quotes {
+        font-size: 6vw;
+    }
+
+    #celebration {
         font-size: 6vw;
     }
 }
 
+/* For Mobile (screens up to 480px) */
 @media (max-width: 480px) {
-    /* Mobile */
     h1 {
         font-size: 10vw;
     }
+
     h2 {
         font-size: 12vw;
     }
+
     .wedding-date, .time-box {
         font-size: 6vw;
     }
+
     .heart-container {
         font-size: 15vw;
     }
+
     .love-quotes {
         font-size: 7vw;
     }
+
     #celebration {
         font-size: 6vw;
     }
+
     .falling-heart {
         font-size: 8vw;
     }
+
     .confetti {
-        width: 8vw;
-        height: 8vw;
+        width: 10vw;
+        height: 10vw;
     }
 }
