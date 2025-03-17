@@ -3,33 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Wedding Countdown</title>
+    <title>Wedding Countdown</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="overlay">
-      <div class="container">
-        <h1>Our Wedding Countdown</h1>
-        <p class="names">Ava & Liam</p>
-        <div class="heart">
-          <span>❤️</span>
-        </div>
-        <div class="couple-emoji">
-          <span>👰🤵</span>
-          <!-- Couple emoji -->
-        </div>
-        <div id="countdown">
-          <div class="time" id="days">00</div>
-          <div class="time" id="hours">00</div>
-          <div class="time" id="minutes">00</div>
-          <div class="time" id="seconds">00</div>
-        </div>
-        <p class="message">
-          The love of our lives is waiting just a few days away!
-        </p>
-        <p class="quote">"A lifetime of love starts with this moment..."</p>
+    <!-- Audio for background music -->
+    <audio id="wedding-music" autoplay loop>
+      <source src="music.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+      <h1>Countdown to the Wedding of</h1>
+      <h2 id="couple-name">[Couple's Names]</h2>
+      <!-- Couple's name -->
+
+      <div class="wedding-date">
+        Wedding Date: <span id="wedding-date">November 23, 2025</span>
       </div>
+      <!-- Wedding date -->
+
+      <div class="countdown-box">
+        <div class="countdown">
+          <div class="time-box">
+            <span id="days"></span> <small>Days</small>
+          </div>
+          <div class="time-box">
+            <span id="hours"></span> <small>Hours</small>
+          </div>
+          <div class="time-box">
+            <span id="minutes"></span> <small>Minutes</small>
+          </div>
+          <div class="time-box">
+            <span id="seconds"></span> <small>Seconds</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="heart-container">
+        <span class="heart">❤️</span>
+      </div>
+
+      <div class="love-quotes">
+        <p>"Love is the greatest adventure."</p>
+        <p>
+          "Forever is a long time, but I wouldn’t mind spending it by your
+          side."
+        </p>
+      </div>
+
+      <div id="celebration" class="celebration hidden">
+        <h3 id="wedding-message">Your wedding day has arrived!</h3>
+        <p>Congratulations, [Couple's Names]!</p>
+      </div>
+
+      <div id="confetti"></div>
+      <div id="hearts"></div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>
