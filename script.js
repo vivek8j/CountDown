@@ -1,35 +1,87 @@
-const weddingDate = new Date("2025-06-15T00:00:00"); // Change this to your wedding date
-const countdownElements = {
-  days: document.getElementById("days"),
-  hours: document.getElementById("hours"),
-  minutes: document.getElementById("minutes"),
-  seconds: document.getElementById("seconds"),
-};
+// Set the date we're counting down to
+const weddingDate = new Date("November 23, 2025 12:00:00").getTime();
 
-function updateCountdown() {
-  const now = new Date();
-  const difference = weddingDate - now;
+// Couple's Names - replace with the actual names
+const coupleNames = "Anchal ❤️ Vivek"; // Updated with bride and groom's names
 
-  if (difference <= 0) {
-    document.getElementById("countdown").innerHTML =
-      "<div class='time' style='font-size: 30px;'>It's our wedding day!</div>";
-    clearInterval(countdownInterval);
-    return;
-  }
+// Update the couple's name and wedding date on the page
+document.getElementById("couple-name").innerText = coupleNames;
+document.getElementById("wedding-date").innerText = "November 23, 2025"; // Update the wedding date here
 
-  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+// Initially hide the celebration message
+document.getElementById("celebration").style.display = "none";
+
+// Start the falling hearts effect right away (during the countdown)
+createFallingHearts();
+
+// Update the countdown every second
+const countdown = setInterval(function () {
+  // Get the current date and time
+  const now = new Date().getTime();
+
+  // Find the difference between now and the wedding date
+  const distance = weddingDate - now;
+
+  // Time calculations
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor(
-    (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
   );
-  const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  countdownElements.days.innerText = days < 10 ? `0${days}` : days;
-  countdownElements.hours.innerText = hours < 10 ? `0${hours}` : hours;
-  countdownElements.minutes.innerText = minutes < 10 ? `0${minutes}` : minutes;
-  countdownElements.seconds.innerText = seconds < 10 ? `0${seconds}` : seconds;
+  // Display the result
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+
+  // If the countdown is finished
+  if (distance < 0) {
+    clearInterval(countdown);
+
+    // Hide the countdown and show the celebration message
+    document.querySelector(".countdown").style.display = "none";
+    document.getElementById("celebration").style.display = "block"; // Show celebration message
+    document.getElementById("wedding-message").classList.add("highlight");
+
+    // Trigger confetti effect
+    triggerConfetti();
+  }
+}, 1000);
+
+// Function to trigger falling hearts effect (continuous during countdown)
+function createFallingHearts() {
+  const heartsContainer = document.getElementById("hearts");
+
+  // Create hearts every 500ms during countdown
+  const heartInterval = setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("falling-heart");
+    heart.innerHTML = "❤️"; // You can change the heart symbol here if you want
+
+    // Random position for hearts
+    heart.style.left = `${Math.random() * 100}%`; // Random left position
+    heart.style.animationDuration = `${Math.random() * 2 + 3}s`; // Random fall speed
+    heartsContainer.appendChild(heart);
+
+    // Remove heart after animation completes
+    setTimeout(() => {
+      heart.remove();
+    }, 5000); // Remove after 5 seconds
+  }, 500); // Create a new heart every 500ms
 }
 
-const countdownInterval = setInterval(updateCountdown, 1000);
+// Function to trigger confetti effect
+function triggerConfetti() {
+  const confettiContainer = document.getElementById("confetti");
 
-updateCountdown();
+  // Create confetti pieces
+  for (let i = 0; i < 100; i++) {
+    const confettiPiece = document.createElement("div");
+    confettiPiece.classList.add("confetti");
+    confettiPiece.style.left = `${Math.random() * 100}%`;
+    confettiPiece.style.animationDuration = `${Math.random() * 2 + 3}s`; // Random duration
+    confettiContainer.appendChild(confettiPiece);
+  }
+}
