@@ -1,107 +1,103 @@
+/* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #f4c7b8, #ffd9e7);
+    font-family: 'Georgia', serif;
+    background: radial-gradient(circle, #f7a1d7, #ff9e9e, #f98eb1);
+    /* Soft celebratory background */
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    text-align: center;
+    color: #fff;
+    /* White text for clarity */
+    position: relative;
+    /* For positioning the hearts */
     overflow: hidden;
-    color: #5e5e5e;
 }
 
 .container {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 40px;
     border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 600px;
-    width: 90%;
-    animation: fadeIn 2s ease-out;
+    width: 100%;
+    position: relative;
+    /* Ensure it's above the falling hearts */
 }
 
 h1 {
     font-size: 36px;
-    color: #ff69b4;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+    color: #e63946;
+    /* Bold red tone for title */
+    margin-bottom: 20px;
     font-weight: bold;
 }
 
-.names {
-    font-size: 28px;
-    color: #ff6f61;
-    margin-bottom: 20px;
-}
-
-.heart {
-    font-size: 40px;
-    color: #ff4081;
-    margin-bottom: 20px;
-    animation: pulse 1.5s infinite;
-}
-
-.couple-emoji {
-    font-size: 50px;
+h2 {
+    font-size: 48px;
+    color: #d62828;
+    /* A soft, bright red for the couple's name */
     margin-bottom: 30px;
-    animation: shake 1s infinite;
-}
-
-#countdown {
-    display: flex;
-    justify-content: space-around;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.time {
-    font-size: 50px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: #ff6f61;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
-}
-
-.time:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.message {
-    font-size: 18px;
-    margin-top: 20px;
-    color: #7a7a7a;
-}
-
-.quote {
-    font-size: 20px;
     font-style: italic;
-    color: #ff6f61;
+}
+
+.wedding-date {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #d62828;
+    /* Matching the couple's name for consistency */
+    font-weight: bold;
+}
+
+.countdown-box {
+    display: flex;
+    justify-content: space-between;
     margin-top: 30px;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.countdown {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
-@keyframes pulse {
+.time-box {
+    background-color: #ff4f79;
+    /* Darker pink background for contrast */
+    border-radius: 10px;
+    padding: 15px;
+    margin: 5px;
+    font-size: 30px;
+    color: white;
+    /* White text inside countdown boxes */
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.time-box small {
+    font-size: 14px;
+    color: #ffb3c1;
+    /* Lighter pink for "small" labels */
+}
+
+.heart-container {
+    margin-top: 30px;
+    font-size: 50px;
+    animation: beat 1.5s infinite;
+    color: #ff66b2;
+    /* Lighter, vibrant heart color */
+}
+
+@keyframes beat {
     0% {
         transform: scale(1);
     }
@@ -115,47 +111,121 @@ h1 {
     }
 }
 
-@keyframes shake {
-    0% {
-        transform: rotate(0deg);
-    }
+.love-quotes {
+    margin-top: 20px;
+    font-size: 20px;
+    /* Increased size for better visibility */
+    font-style: italic;
+    color: #ff4f79;
+    /* Bright pink to highlight the quotes */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+    /* Soft glow effect */
+}
 
-    25% {
-        transform: rotate(10deg);
+.love-quotes p {
+    margin: 10px 0;
+}
+
+/* Celebration message styling */
+#celebration {
+    margin-top: 40px;
+    font-size: 28px;
+    color: #ff4f79;
+    /* Deep pink for celebration text */
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#celebration h3 {
+    font-size: 36px;
+    color: #ff66b2;
+    /* Lighter, celebratory pink for the main message */
+}
+
+#celebration p {
+    font-size: 24px;
+    font-style: italic;
+    color: #f9c74f;
+    /* Gold-ish color for the congratulatory message */
+}
+
+/* Highlight the "Your wedding day has arrived!" message */
+.highlight {
+    color: #ff66b2;
+    text-shadow: 0 0 10px #ff66b2, 0 0 20px #ff66b2, 0 0 30px #ff66b2, 0 0 40px #ff66b2;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ff66b2, 0 0 10px #ff66b2, 0 0 15px #ff66b2;
     }
 
     50% {
-        transform: rotate(0deg);
-    }
-
-    75% {
-        transform: rotate(-10deg);
+        text-shadow: 0 0 15px #ff66b2, 0 0 20px #ff66b2, 0 0 25px #ff66b2;
     }
 
     100% {
-        transform: rotate(0deg);
+        text-shadow: 0 0 30px #ff66b2, 0 0 40px #ff66b2, 0 0 50px #ff66b2;
     }
 }
 
-@media (max-width: 600px) {
-    .time {
-        font-size: 40px;
-        padding: 15px;
+/* Falling hearts animation */
+#hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    z-index: 1;
+    /* Ensure hearts are below the main content */
+}
+
+.falling-heart {
+    position: absolute;
+    font-size: 30px;
+    animation: fall 4s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px);
+        opacity: 1;
     }
 
-    h1 {
-        font-size: 28px;
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Confetti effect */
+#confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff66b2;
+    /* Matching color with hearts */
+    animation: confettiFall 3s infinite;
+    border-radius: 50%;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-50px) rotate(0);
     }
 
-    .names {
-        font-size: 24px;
-    }
-
-    .quote {
-        font-size: 18px;
-    }
-
-    .couple-emoji {
-        font-size: 40px;
+    100% {
+        transform: translateY(100vh) rotate(360deg);
     }
 }
