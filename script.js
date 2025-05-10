@@ -53,3 +53,25 @@ function triggerConfetti() {
     confettiContainer.appendChild(confettiPiece);
   }
 }
+
+// 🎵 Music autoplay fallback for mobile
+const music = document.getElementById("wedding-music");
+const playButton = document.getElementById("play-music-btn");
+const musicControl = document.getElementById("music-control");
+
+// Attempt autoplay muted
+music.muted = true;
+music.play().then(() => {
+  music.muted = false;
+  musicControl.style.display = "none";
+}).catch(() => {
+  music.muted = false;
+  musicControl.style.display = "block";
+});
+
+// Manual play on button click
+playButton.addEventListener("click", () => {
+  music.play().then(() => {
+    musicControl.style.display = "none";
+  });
+});
