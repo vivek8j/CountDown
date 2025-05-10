@@ -1,231 +1,204 @@
-/* Reset some default styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Georgia', serif;
-    background: radial-gradient(circle, #f7a1d7, #ff9e9e, #f98eb1);
-    /* Soft celebratory background */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-    color: #fff;
-    /* White text for clarity */
-    position: relative;
-    /* For positioning the hearts */
-    overflow: hidden;
+  font-family: 'Georgia', serif;
+  background: radial-gradient(circle, #f7a1d7, #ff9e9e, #f98eb1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+audio {
+  display: none;
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 600px;
-    width: 100%;
-    position: relative;
-    /* Ensure it's above the falling hearts */
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 90%;
+  position: relative;
 }
 
 h1 {
-    font-size: 36px;
-    color: #e63946;
-    /* Bold red tone for title */
-    margin-bottom: 20px;
-    font-weight: bold;
+  font-size: 2rem;
+  color: #e63946;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 h2 {
-    font-size: 48px;
-    color: #d62828;
-    /* A soft, bright red for the couple's name */
-    margin-bottom: 30px;
-    font-style: italic;
+  font-size: 2.5rem;
+  color: #d62828;
+  margin-bottom: 30px;
+  font-style: italic;
 }
 
 .wedding-date {
-    font-size: 24px;
-    margin-top: 20px;
-    color: #d62828;
-    /* Matching the couple's name for consistency */
-    font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: #d62828;
+  font-weight: bold;
 }
 
 .countdown-box {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  gap: 10px;
 }
 
 .countdown {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
 }
 
 .time-box {
-    background-color: #ff4f79;
-    /* Darker pink background for contrast */
-    border-radius: 10px;
-    padding: 15px;
-    margin: 5px;
-    font-size: 30px;
-    color: white;
-    /* White text inside countdown boxes */
-    font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ff4f79;
+  border-radius: 10px;
+  padding: 1em;
+  flex: 1 1 100px;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .time-box small {
-    font-size: 14px;
-    color: #ffb3c1;
-    /* Lighter pink for "small" labels */
+  font-size: 0.8em;
+  color: #ffb3c1;
 }
 
 .heart-container {
-    margin-top: 30px;
-    font-size: 50px;
-    animation: beat 1.5s infinite;
-    color: #ff66b2;
-    /* Lighter, vibrant heart color */
+  margin-top: 30px;
+  font-size: 2.5rem;
+  animation: beat 1.5s infinite;
+  color: #ff66b2;
 }
 
 @keyframes beat {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }
 
 .love-quotes {
-    margin-top: 20px;
-    font-size: 20px;
-    /* Increased size for better visibility */
-    font-style: italic;
-    color: #ff4f79;
-    /* Bright pink to highlight the quotes */
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
-    /* Soft glow effect */
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #ff4f79;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
 }
 
 .love-quotes p {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
-/* Celebration message styling */
 #celebration {
-    margin-top: 40px;
-    font-size: 28px;
-    color: #ff4f79;
-    /* Deep pink for celebration text */
-    font-weight: bold;
-    animation: fadeIn 2s ease-in-out;
+  margin-top: 40px;
+  font-size: 1.5rem;
+  color: #ff4f79;
+  font-weight: bold;
+  animation: fadeIn 2s ease-in-out;
 }
 
 #celebration h3 {
-    font-size: 36px;
-    color: #ff66b2;
-    /* Lighter, celebratory pink for the main message */
+  font-size: 2rem;
+  color: #ff66b2;
 }
 
 #celebration p {
-    font-size: 24px;
-    font-style: italic;
-    color: #f9c74f;
-    /* Gold-ish color for the congratulatory message */
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #f9c74f;
 }
 
-/* Highlight the "Your wedding day has arrived!" message */
 .highlight {
-    color: #ff66b2;
-    text-shadow: 0 0 10px #ff66b2, 0 0 20px #ff66b2, 0 0 30px #ff66b2, 0 0 40px #ff66b2;
-    animation: glow 1.5s ease-in-out infinite alternate;
+  color: #ff66b2;
+  text-shadow: 0 0 10px #ff66b2, 0 0 20px #ff66b2, 0 0 30px #ff66b2, 0 0 40px #ff66b2;
+  animation: glow 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
-    0% {
-        text-shadow: 0 0 5px #ff66b2, 0 0 10px #ff66b2, 0 0 15px #ff66b2;
-    }
-
-    50% {
-        text-shadow: 0 0 15px #ff66b2, 0 0 20px #ff66b2, 0 0 25px #ff66b2;
-    }
-
-    100% {
-        text-shadow: 0 0 30px #ff66b2, 0 0 40px #ff66b2, 0 0 50px #ff66b2;
-    }
+  0% { text-shadow: 0 0 5px #ff66b2, 0 0 10px #ff66b2; }
+  50% { text-shadow: 0 0 15px #ff66b2, 0 0 20px #ff66b2; }
+  100% { text-shadow: 0 0 30px #ff66b2, 0 0 40px #ff66b2; }
 }
 
-/* Falling hearts animation */
 #hearts {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    pointer-events: none;
-    z-index: 1;
-    /* Ensure hearts are below the main content */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .falling-heart {
-    position: absolute;
-    font-size: 30px;
-    animation: fall 4s linear infinite;
+  position: absolute;
+  font-size: 30px;
+  animation: fall 4s linear infinite;
 }
 
 @keyframes fall {
-    0% {
-        transform: translateY(-100px);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(100vh);
-        opacity: 0;
-    }
+  0% { transform: translateY(-100px); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
 }
 
-/* Confetti effect */
 #confetti {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 999;
 }
 
 .confetti {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: #ff66b2;
-    /* Matching color with hearts */
-    animation: confettiFall 3s infinite;
-    border-radius: 50%;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ff66b2;
+  animation: confettiFall 3s infinite;
+  border-radius: 50%;
 }
 
 @keyframes confettiFall {
-    0% {
-        transform: translateY(-50px) rotate(0);
-    }
+  0% { transform: translateY(-50px) rotate(0); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
 
-    100% {
-        transform: translateY(100vh) rotate(360deg);
-    }
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 2rem; }
+  .wedding-date { font-size: 1.2rem; }
+  .time-box { font-size: 1.2rem; padding: 0.8em; }
+  .love-quotes { font-size: 1rem; }
+  .heart-container { font-size: 2rem; }
+  #celebration { font-size: 1.2rem; }
+  #celebration h3 { font-size: 1.5rem; }
+  #celebration p { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .countdown-box { flex-direction: column; align-items: center; }
+  .time-box { width: 80%; margin: 5px auto; }
 }
