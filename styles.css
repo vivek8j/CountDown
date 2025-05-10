@@ -21,6 +21,30 @@ audio {
   display: none;
 }
 
+#music-control {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: none;
+}
+
+#play-music-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  background-color: #ff66b2;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+#play-music-btn:hover {
+  background-color: #e63946;
+}
+
 .container {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 40px;
@@ -123,21 +147,21 @@ h2 {
 }
 
 #celebration p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-style: italic;
   color: #f9c74f;
 }
 
 .highlight {
   color: #ff66b2;
-  text-shadow: 0 0 10px #ff66b2, 0 0 20px #ff66b2, 0 0 30px #ff66b2, 0 0 40px #ff66b2;
+  text-shadow: 0 0 10px #ff66b2, 0 0 20px #ff66b2, 0 0 30px #ff66b2;
   animation: glow 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
-  0% { text-shadow: 0 0 5px #ff66b2, 0 0 10px #ff66b2; }
-  50% { text-shadow: 0 0 15px #ff66b2, 0 0 20px #ff66b2; }
-  100% { text-shadow: 0 0 30px #ff66b2, 0 0 40px #ff66b2; }
+  0% { text-shadow: 0 0 5px #ff66b2; }
+  50% { text-shadow: 0 0 20px #ff66b2; }
+  100% { text-shadow: 0 0 30px #ff66b2; }
 }
 
 #hearts {
@@ -184,7 +208,7 @@ h2 {
   100% { transform: translateY(100vh) rotate(360deg); }
 }
 
-/* Media Queries for responsiveness */
+/* Responsive */
 @media (max-width: 768px) {
   .container { padding: 20px; }
   h1 { font-size: 1.8rem; }
