@@ -54,24 +54,14 @@ function triggerConfetti() {
   }
 }
 
-// 🎵 Music autoplay fallback for mobile
+// 🎵 Auto-play music logic
 const music = document.getElementById("wedding-music");
-const playButton = document.getElementById("play-music-btn");
-const musicControl = document.getElementById("music-control");
 
-// Attempt autoplay muted
 music.muted = true;
-music.play().then(() => {
-  music.muted = false;
-  musicControl.style.display = "none";
-}).catch(() => {
-  music.muted = false;
-  musicControl.style.display = "block";
-});
-
-// Manual play on button click
-playButton.addEventListener("click", () => {
-  music.play().then(() => {
-    musicControl.style.display = "none";
+music.play()
+  .then(() => {
+    music.muted = false;
+  })
+  .catch((err) => {
+    console.warn("Autoplay with sound failed. This is expected on mobile browsers.", err);
   });
-});
