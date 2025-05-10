@@ -1,5 +1,5 @@
 // Set the date we're counting down to
-const weddingDate = new Date("November 23, 2025 12:00:00").getTime();
+const weddingDate = new Date("November 22, 2025 12:00:00").getTime();
 
 // Couple's Names - replace with the actual names
 const coupleNames = "Anchal ❤️ Vivek"; // Updated with bride and groom's names
