@@ -21,30 +21,6 @@ audio {
   display: none;
 }
 
-#music-control {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  display: none;
-}
-
-#play-music-btn {
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 25px;
-  background-color: #ff66b2;
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
-}
-
-#play-music-btn:hover {
-  background-color: #e63946;
-}
-
 .container {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 40px;
