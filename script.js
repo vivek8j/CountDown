@@ -1,4 +1,4 @@
-const weddingDate = new Date("November 23, 2025 12:00:00").getTime();
+const weddingIST = new Date("November 23, 2025 12:00:00 GMT+0530").getTime(); // IST time
 const coupleNames = "Anchal ❤️ Vivek";
 
 document.getElementById("couple-name").innerText = coupleNames;
@@ -8,8 +8,11 @@ document.getElementById("celebration").style.display = "none";
 createFallingHearts();
 
 const countdown = setInterval(function () {
-  const now = new Date().getTime();
-  const distance = weddingDate - now;
+  const nowUTC = new Date().getTime();
+  const offsetIST = 5.5 * 60 * 60 * 1000; // IST offset in milliseconds
+  const nowIST = nowUTC + offsetIST;
+
+  const distance = weddingIST - nowIST;
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
