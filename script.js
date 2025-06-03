@@ -6,13 +6,14 @@ document.getElementById("couple-name").innerText = coupleNames;
 document.getElementById("wedding-date").innerText = "November 23, 2025";
 document.getElementById("celebration").style.display = "none";
 
-createFallingHearts();
+function getISTTime() {
+  const now = new Date();
+  const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+  return new Date(utc + (5.5 * 60 * 60 * 1000));
+}
 
 const countdown = setInterval(function () {
-  // Get current IST time reliably
-  const nowISTString = new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" });
-  const nowIST = new Date(nowISTString).getTime();
-
+  const nowIST = getISTTime().getTime();
   const distance = weddingDate - nowIST;
 
   if (distance < 0) {
@@ -34,3 +35,30 @@ const countdown = setInterval(function () {
   document.getElementById("minutes").innerHTML = minutes;
   document.getElementById("seconds").innerHTML = seconds;
 }, 1000);
+
+// Example heart/confetti generator — you can replace with your actual effect
+function triggerConfetti() {
+  const confettiContainer = document.getElementById("confetti");
+  for (let i = 0; i < 100; i++) {
+    const confetti = document.createElement("div");
+    confetti.className = "confetti";
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.animationDuration = 2 + Math.random() * 3 + "s";
+    confettiContainer.appendChild(confetti);
+    setTimeout(() => confetti.remove(), 5000);
+  }
+}
+
+function createFallingHearts() {
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "falling-heart";
+    heart.innerText = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = 4 + Math.random() * 2 + "s";
+    document.getElementById("hearts").appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }, 500);
+}
+
+createFallingHearts();
