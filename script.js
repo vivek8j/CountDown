@@ -1,4 +1,4 @@
-const weddingIST = new Date("November 23, 2025 12:00:00 GMT+0530").getTime(); // IST time
+const weddingIST = new Date("November 23, 2025 12:00:00 GMT+0530").getTime(); 
 const coupleNames = "Anchal ❤️ Vivek";
 
 document.getElementById("couple-name").innerText = coupleNames;
